@@ -1,0 +1,29 @@
+name: V_CI - Node.js - Build v1
+
+on:
+  push:
+    branches:
+      - release/**
+      - develop
+      - feature/**
+
+env:
+  CHECKOUT_WORKSPACE: ./checkout-workspace
+  NODE_BUILD_VERSION: 16
+
+jobs:
+  call_workflow_setup:
+    name: Use Reusing workflows - setup
+    uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/setup.yml@main
+    with:
+      node_version: 16
+      os: >-
+        ["ubuntu-latest", "windows-latest"]
+  call_workflow_build:
+    needs: [call_workflow_setup]
+    name: Use Reusing workflows - build
+    uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/build.yml@main
+  call_workflow_test:
+    needs: [call_workflow_build]
+    name: Use Reusing workflows - test
+    uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/test.yml@main
