@@ -1,4 +1,4 @@
-name: V_CI - Node.js - Build v1
+name: V_CI - Node.js - Build v1.
 
 on:
   push:
