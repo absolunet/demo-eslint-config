@@ -14,10 +14,9 @@ jobs:
   call_workflow_setup:
     name: Reusable workflows/setup.yml@main
     uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/setup.yml@main
-    with:
-      node_version: 16
-      os: >-
-        ["ubuntu-latest", "windows-latest"]
+#    with:
+#      os: >-
+#        ["ubuntu-latest", "windows-latest"]
   call_workflow_build:
     needs: [call_workflow_setup]
     name: Reusable workflows/build.yml@main
