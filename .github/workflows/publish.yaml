@@ -1,0 +1,29 @@
+name: Workflow - Publish
+
+on:
+  push:
+    branches:
+      - production
+
+env:
+  NODE_AUTH_TOKEN: ${{ secrets.NPMRC_JFROG_ARTIFACTORY_TOKEN }}
+  NODE_REGISTRY_URL: ${{ secrets.NPMRC_JFROG_ARTIFACTORY_URL }}
+  NODE_SCOPE: ${{ secrets.NPMRC_JFROG_ARTIFACTORY_NAMESPACE }}
+
+jobs:
+  call_workflow_setup:
+    uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/setup.yml@main
+    with:
+      branch-ref: ${{ github.event.pull_request.base.ref }}
+      node-auth-token: $NODE_AUTH_TOKEN
+      node-registry-url: $NODE_REGISTRY_URL
+      node-scope: $NODE_SCOPE
+    secrets: inherit
+
+  call_workflow_build:
+    needs: [ call_workflow_setup ]
+    uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/build.yml@main
+  call_workflow_publish:
+    needs: [ call_workflow_build ]
+    uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/publish.yml@main
+    secrets: inherit

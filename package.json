@@ -1,0 +1,37 @@
+{
+	"name": "demo-eslint-config",
+	"private": true,
+	"version": "5.2.0",
+	"engines": {
+		"node": ">= 12.20.0"
+	},
+	"scripts": {
+		"postinstall": "npm run manager:install",
+		"manager:install": "node manager.mjs --task=install",
+		"manager:outdated": "node manager.mjs --task=outdated",
+		"manager:build": "node manager.mjs --task=build",
+		"manager:watch": "node manager.mjs --task=watch",
+		"manager:fix": "node manager.mjs --task=fix",
+		"manager:documentation": "node manager.mjs --task=documentation",
+		"manager:prepare": "node manager.mjs --task=prepare",
+		"manager:rebuild": "node manager.mjs --task=rebuild",
+		"manager:publish": "node manager.mjs --task=publish",
+		"manager:version": "node manager.mjs --task=version --release=$npm_config_release",
+		"manager:publish:unsafe": "node manager.mjs --task=publish:unsafe",
+		"test": "echo 'Tests has been disabled!'",
+		"test:standards": "node test --scope=standards",
+		"test:unit": "node test --scope=unit",
+		"test:feature": "node test --scope=feature",
+		"test:integration": "node test --scope=integration",
+		"test:endtoend": "node test --scope=endtoend"
+	},
+	"devDependencies": {
+		"@absolunet/fss": "1.7.0",
+		"@absolunet/manager": "3.0.0-rc.1",
+		"@absolunet/prettier-config-core": "1.0.1",
+		"@absolunet/tester": "5.0.0-beta.5"
+	},
+	"workspaces": [
+		"packages/*"
+	]
+}
