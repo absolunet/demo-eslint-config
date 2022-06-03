@@ -21,7 +21,7 @@ jobs:
     uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/setup.yml@main
     with:
       branch-ref: ${{ github.event.pull_request.base.ref }}
-      node-auth-token: 'TOTO'
+      node-auth-token: ${{ secrets.NPMRC_JFROG_ARTIFACTORY_TOKEN }}
       node-registry-url: $NODE_REGISTRY_URL
       node-scope: $NODE_SCOPE
     secrets: inherit
