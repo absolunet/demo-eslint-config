@@ -1,0 +1,22 @@
+name: Workflow - Version Change
+
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+      - reopened
+    branches:
+      - production
+
+jobs:
+  call_workflow_setup:
+    if: startsWith(github.head_ref, 'release')
+    uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/setup.yml@main
+  call_workflow_build:
+    needs: [ call_workflow_setup ]
+    uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/build.yml@main
+  call_workflow_version_bump:
+    needs: [ call_workflow_build ]
+    uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/version_bump.yml@main
