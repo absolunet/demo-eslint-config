@@ -17,4 +17,4 @@ jobs:
   call_workflow_version_bump:
     needs: [ call_workflow_setup ]
     uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/version_bump.yml@main
-      secrets: inherit
+    secrets: inherit
