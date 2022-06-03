@@ -1,6 +1,6 @@
 {
 	"name": "@absolunet/demo-eslint-config-test",
-	"version": "5.0.34",
+	"version": "5.2.0",
 	"description": "ESLint config for testing",
 	"definition": "",
 	"homepage": "https://github.com/absolunet/eslint-config",
