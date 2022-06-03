@@ -15,9 +15,9 @@ jobs:
     uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/setup.yml@main
     with:
       branch-ref: ${{ github.event.pull_request.base.ref }}
-      NODE_AUTH_TOKEN: ${{ env.NODE_AUTH_TOKEN }}
-      NODE_REGISTRY_URL: ${{ env.NODE_REGISTRY_URL }}
-      NODE_SCOPE: ${{ env.NODE_SCOPE }}
+      node-auth-token: $NODE_AUTH_TOKEN
+      node-registry-url: $NODE_REGISTRY_URL
+      node-scope: $NODE_SCOPE
 
   call_workflow_build:
     needs: [ call_workflow_setup ]
