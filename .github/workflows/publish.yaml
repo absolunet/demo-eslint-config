@@ -1,4 +1,4 @@
-name: Workflow - Publish.
+name: Workflow - Publish
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - production
 
 env:
-  NPM_REGISTRY: private
+  NPM_REGISTRY: 'private'
 
 jobs:
   call_workflow_setup:
