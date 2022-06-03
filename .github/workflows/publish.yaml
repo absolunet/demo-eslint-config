@@ -11,6 +11,12 @@ env:
   NODE_SCOPE: ${{ secrets.NPMRC_JFROG_ARTIFACTORY_NAMESPACE }}
 
 jobs:
+  test:
+    name: Create Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: TEST
+        run: echo $NODE_REGISTRY_URL
   call_workflow_setup:
     uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/setup.yml@main
     with:
