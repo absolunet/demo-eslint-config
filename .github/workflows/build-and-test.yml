@@ -19,6 +19,7 @@ jobs:
       node-auth-token: $NODE_AUTH_TOKEN
       node-registry-url: $NODE_REGISTRY_URL
       node-scope: $NODE_SCOPE
+    secrets: inherit
   call_workflow_build:
     needs: [ call_workflow_setup ]
     uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/build.yml@main
