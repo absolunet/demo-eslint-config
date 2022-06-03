@@ -1,7 +1,0 @@
-*.*
-!*.js
-!*.cjs
-!*.mjs
-
-dist
-docs

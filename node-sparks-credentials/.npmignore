@@ -1,7 +1,0 @@
-.DS_Store
-test
-.editorconfig
-.eslintrc.yaml
-.gitignore
-bitbucket-pipelines.yml
-manager.js
