@@ -6,14 +6,14 @@ on:
       - production
 
 env:
-  PRIVATE_REGISTRY: true
+  NPM_REGISTRY: private
 
 jobs:
   call_workflow_setup:
     uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/setup.yml@main
     with:
       branch-ref: ${{ github.head_ref }}
-      private-registry: $PRIVATE_REGISTRY
+      private-registry: $NODE_REGISTRY
     secrets: inherit
   call_workflow_build:
     needs: [ call_workflow_setup ]
@@ -22,5 +22,5 @@ jobs:
     needs: [ call_workflow_build ]
     uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/publish.yml@main
     with:
-      private-registry: $PRIVATE_REGISTRY
+      npm-registry: $NPM_REGISTRY
     secrets: inherit
