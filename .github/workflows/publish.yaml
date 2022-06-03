@@ -20,12 +20,9 @@ jobs:
   call_workflow_setup:
     uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/setup.yml@main
     with:
-      branch-ref: ${{ github.event.pull_request.base.ref }}
-      node-auth-token: ${{ secrets.NPMRC_JFROG_ARTIFACTORY_TOKEN }}
-      node-registry-url: $NODE_REGISTRY_URL
-      node-scope: $NODE_SCOPE
+      branch-ref: ${{ github.head_ref }}
+      private-registry: true
     secrets: inherit
-
   call_workflow_build:
     needs: [ call_workflow_setup ]
     uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/build.yml@main
