@@ -5,15 +5,12 @@ on:
     branches:
       - production
 
-env:
-  NPM_REGISTRY: 'private'
-
 jobs:
   call_workflow_setup:
     uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/setup.yml@main
     with:
       branch-ref: ${{ github.head_ref }}
-      npm-registry: 'private'
+      npm-registry: private
     secrets: inherit
   call_workflow_build:
     needs: [ call_workflow_setup ]
@@ -22,5 +19,5 @@ jobs:
     needs: [ call_workflow_build ]
     uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/publish.yml@main
     with:
-      npm-registry: 'private'
+      npm-registry: private
     secrets: inherit
