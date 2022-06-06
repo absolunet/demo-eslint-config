@@ -1,4 +1,4 @@
-name: Workflow - Version Change
+name: Version bump and git commit
 
 on:
   pull_request:
@@ -9,11 +9,13 @@ on:
 
 jobs:
   call_workflow_setup:
+    name: Setup environment
     if: startsWith(github.head_ref, 'release')
     uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/setup.yml@main
     with:
       branch-ref: ${{ github.head_ref }}
     secrets: inherit
   call_workflow_version_bump:
+    name: Bump version
     needs: [ call_workflow_setup ]
     uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/version_bump.yml@main

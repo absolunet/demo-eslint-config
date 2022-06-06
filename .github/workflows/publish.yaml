@@ -1,4 +1,4 @@
-name: Workflow - Publish
+name: Publish to registry and git tag
 
 on:
   push:
@@ -7,14 +7,17 @@ on:
 
 jobs:
   call_workflow_setup:
+    name: Setup environment
     uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/setup.yml@main
     with:
       branch-ref: ${{ github.head_ref }}
     secrets: inherit
   call_workflow_build:
+    name: Build project
     needs: [ call_workflow_setup ]
     uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/build.yml@main
   call_workflow_publish:
+    name: Publish packages
     needs: [ call_workflow_build ]
     uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/publish.yml@main
     secrets: inherit
