@@ -13,7 +13,6 @@ jobs:
     uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/setup.yml@main
     with:
       branch-ref: ${{ github.head_ref }}
-      npm-registry: private
     secrets: inherit
   call_workflow_version_bump:
     needs: [ call_workflow_setup ]
