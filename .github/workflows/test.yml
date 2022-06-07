@@ -29,7 +29,9 @@ jobs:
       # env-group-stuff: ${{ env.group-stuff }}             # Invalid according to parser
       # env-staticgroup-stuff: ${{ env.staticgroup-stuff }} # Invalid according to parser
       # env-unrelated-stuff: ${{ env.unrelated-stuff }}     # Invalid according to parser
-    secrets: inherit
+    secrets:
+      yoyoyo: ${{ secrets.SHADY_STUFF }}
+
 #  call_workflow_build:
 #    name: Build project
 #    needs: [ call_workflow_setup ]
