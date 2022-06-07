@@ -11,6 +11,7 @@ jobs:
     uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/setup.yml@main
     with:
       branch-ref: ${{ github.head_ref }}
+      access-needed: private-sparks
     secrets: inherit
   call_workflow_build:
     name: Build project
