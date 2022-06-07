@@ -24,11 +24,11 @@ jobs:
       # direct-group-stuff: xx${{ secrets.SHADY_STUFF }}xx  # Invalid according to parser
       direct-staticgroup-stuff: xxslim marshall mathersxx
       direct-unrelated-stuff: allo
-      env-clean-stuff: ${{ env.clean-stuff }}
-      env-static-stuff: ${{ env.static-stuff }}
-      env-group-stuff: ${{ env.group-stuff }}
-      env-staticgroup-stuff: ${{ env.staticgroup-stuff }}
-      env-unrelated-stuff: ${{ env.unrelated-stuff }}
+      # env-clean-stuff: ${{ env.clean-stuff }}             # Invalid according to parser
+      # env-static-stuff: ${{ env.static-stuff }}           # Invalid according to parser
+      # env-group-stuff: ${{ env.group-stuff }}             # Invalid according to parser
+      # env-staticgroup-stuff: ${{ env.staticgroup-stuff }} # Invalid according to parser
+      # env-unrelated-stuff: ${{ env.unrelated-stuff }}     # Invalid according to parser
     secrets: inherit
 #  call_workflow_build:
 #    name: Build project
