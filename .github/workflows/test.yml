@@ -8,10 +8,10 @@ on:
 
 env:
   clean-stuff: ${{ secrets.SHADY_STUFF }}
-  static-stuff: 'slim marshall mathers'
-  group-stuff: 'xx${{ secrets.SHADY_STUFF }}xx'
-  staticgroup-stuff: 'xxslim marshall mathersxx'
-  unrelated-stuff: 'allo'
+  static-stuff: slim marshall mathers
+  group-stuff: xx${{ secrets.SHADY_STUFF }}xx
+  staticgroup-stuff: xxslim marshall mathersxx
+  unrelated-stuff: allo
 
 jobs:
   call_workflow_setup:
@@ -20,10 +20,10 @@ jobs:
     with:
       branch-ref: ${{ github.head_ref }}
       direct-clean-stuff: ${{ secrets.SHADY_STUFF }}
-      direct-static-stuff: 'slim marshall mathers'
-      direct-group-stuff: 'xx${{ secrets.SHADY_STUFF }}xx'
-      direct-staticgroup-stuff: 'xxslim marshall mathersxx'
-      direct-unrelated-stuff: 'allo'
+      direct-static-stuff: slim marshall mathers
+      direct-group-stuff: xx${{ secrets.SHADY_STUFF }}xx
+      direct-staticgroup-stuff: xxslim marshall mathersxx
+      direct-unrelated-stuff: allo
       env-clean-stuff: ${{ env.clean-stuff }}
       env-static-stuff: ${{ env.static-stuff }}
       env-group-stuff: ${{ env.group-stuff }}
