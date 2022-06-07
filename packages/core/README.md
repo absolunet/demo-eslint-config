@@ -7,7 +7,7 @@
 [![License: MIT][license-badge]][license-url]
 
 
-> ESLint config - Core rules
+> ESLint config - Core rules.
 
 Opinionated ESLint [shareable config](https://eslint.org/docs/developer-guide/shareable-configs.html) good for Node.js and browser environment.
 
