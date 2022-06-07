@@ -19,7 +19,7 @@ jobs:
     uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/setup.yml@main
     with:
       branch-ref: ${{ github.head_ref }}
-      direct-clean-stuff: ${{ secrets.SHADY_STUFF }}
+      # direct-clean-stuff: ${{ secrets.SHADY_STUFF }}    # Invalid according to parser
       direct-static-stuff: slim marshall mathers
       direct-group-stuff: xx${{ secrets.SHADY_STUFF }}xx
       direct-staticgroup-stuff: xxslim marshall mathersxx
