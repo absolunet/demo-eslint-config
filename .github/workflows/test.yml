@@ -31,7 +31,7 @@ jobs:
       # env-unrelated-stuff: ${{ env.unrelated-stuff }}     # Invalid according to parser
     secrets:
       yoyoyo: ${{ secrets.SHADY_STUFF }}
-      nonono: ${{ env.clean-stuff }}
+      #nonono: ${{ env.clean-stuff }}                       # Invalid according to parser
       insult: 'ta mère'
 
 #  call_workflow_build:
