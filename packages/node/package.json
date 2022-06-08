@@ -1,5 +1,5 @@
 {
-	"name": "@absolunet/demo-eslint-config-node",
+	"name": "@absolunet-sparks/demo-eslint-config-node",
 	"version": "5.2.0",
 	"description": "ESLint config for Node.js",
 	"definition": "",

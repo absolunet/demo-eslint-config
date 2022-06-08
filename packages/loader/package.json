@@ -1,5 +1,5 @@
 {
-	"name": "@absolunet/demo-eslint-loader",
+	"name": "@absolunet-sparks/demo-eslint-loader",
 	"version": "5.2.0",
 	"description": "ESLint YAML configuration loader",
 	"definition": "",
