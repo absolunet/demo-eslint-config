@@ -16,7 +16,7 @@ jobs:
       branch-ref: ${{ github.head_ref }}
       jfrog-artifactory: true
     secrets:
-      GLOBAL_ACCESS_TOKEN: ${{ secrets.GLOBAL_ACCESS_TOKEN }}
+      github-token: ${{ secrets.GLOBAL_ACCESS_TOKEN }}
       scope: ${{ secrets.JFROG_ARTIFACTORY_NPM_SPARKS_SCOPE }}
       registry-url: ${{ secrets.JFROG_ARTIFACTORY_NPM_SPARKS_REGISTRY }}
       auth-token: ${{ secrets.JFROG_ARTIFACTORY_NPM_SPARKS_AUTH }}
