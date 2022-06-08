@@ -1,4 +1,4 @@
-name: Version bump and git commit
+name: Version bump and git commit.
 
 on:
   pull_request:
