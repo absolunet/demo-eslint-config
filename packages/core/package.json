@@ -1,6 +1,6 @@
 {
 	"name": "@absolunet-sparks/demo-eslint-config-core",
-	"version": "5.2.1",
+	"version": "5.2.5",
 	"description": "ESLint config - Core rules",
 	"definition": "",
 	"homepage": "https://github.com/absolunet/eslint-config",
