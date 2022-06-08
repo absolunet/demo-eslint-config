@@ -1,4 +1,4 @@
-name: Workflow - Build and Test.
+name: Run tests
 
 on:
   push:
@@ -8,13 +8,21 @@ on:
 
 jobs:
   call_workflow_setup:
+    name: Setup environment
     uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/setup.yml@main
     with:
       branch-ref: ${{ github.head_ref }}
-    secrets: inherit
+      jfrog-artifactory: true
+    secrets:
+      GLOBAL_ACCESS_TOKEN: ${{ secrets.GLOBAL_ACCESS_TOKEN }}
+      scope: ${{ secrets.JFROG_ARTIFACTORY_NPM_SPARKS_SCOPE }}
+      registry-url: ${{ secrets.JFROG_ARTIFACTORY_NPM_SPARKS_REGISTRY }}
+      auth-token: ${{ secrets.JFROG_ARTIFACTORY_NPM_SPARKS_AUTH }}
   call_workflow_build:
+    name: Build project
     needs: [ call_workflow_setup ]
     uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/build.yml@main
   call_workflow_test:
+    name: Run tests
     needs: [ call_workflow_build ]
     uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/test.yml@main
