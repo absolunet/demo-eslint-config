@@ -1,6 +1,6 @@
 {
 	"name": "@absolunet-sparks/demo-eslint-config-browser",
-	"version": "5.2.4",
+	"version": "5.2.5",
 	"description": "ESLint config for browser",
 	"definition": "",
 	"homepage": "https://github.com/absolunet/eslint-config",
