@@ -1,7 +1,7 @@
 {
 	"name": "demo-eslint-config",
 	"private": true,
-	"version": "5.2.2",
+	"version": "5.2.3",
 	"engines": {
 		"node": ">= 12.20.0"
 	},

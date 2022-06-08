@@ -1,6 +1,6 @@
 {
 	"name": "@absolunet-sparks/demo-eslint-config-node",
-	"version": "5.2.2",
+	"version": "5.2.3",
 	"description": "ESLint config for Node.js",
 	"definition": "",
 	"homepage": "https://github.com/absolunet/eslint-config",
