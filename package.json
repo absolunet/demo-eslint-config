@@ -6,8 +6,6 @@
 		"node": ">= 12.20.0"
 	},
 	"scripts": {
-		"postinstall": "npm run manager:install",
-		"manager:install": "node manager.mjs --task=install",
 		"manager:outdated": "node manager.mjs --task=outdated",
 		"manager:build": "node manager.mjs --task=build",
 		"manager:watch": "node manager.mjs --task=watch",
@@ -15,9 +13,8 @@
 		"manager:documentation": "node manager.mjs --task=documentation",
 		"manager:prepare": "node manager.mjs --task=prepare",
 		"manager:rebuild": "node manager.mjs --task=rebuild",
-		"manager:publish": "node manager.mjs --task=publish",
-		"manager:version": "node manager.mjs --task=version --release=$npm_config_release",
-		"manager:publish:unsafe": "node manager.mjs --task=publish:unsafe",
+		"ci:version": "node manager.mjs --task=version --release=$npm_config_release",
+		"ci:build": "npm run manager:build",
 		"test": "echo 'Tests has been disabled!'",
 		"test:standards": "node test --scope=standards",
 		"test:unit": "node test --scope=unit",

@@ -11,7 +11,7 @@ jobs:
   call_workflow_setup:
     name: Setup environment
     if: startsWith(github.head_ref, 'release')
-    uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/setup.yml@main
+    uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/setup.yml@develop
     with:
       branch-ref: ${{ github.head_ref }}
       jfrog-artifactory: true
@@ -23,4 +23,4 @@ jobs:
   call_workflow_version_bump:
     name: Bump version
     needs: [ call_workflow_setup ]
-    uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/version_bump.yml@main
+    uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/version_bump.yml@develop
