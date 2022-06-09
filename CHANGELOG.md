@@ -16,6 +16,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 
+## [5.2.7] - 2022-06-09
+
+
+
+
+
+
 ## [5.2.6] - 2022-06-08
 
 
@@ -843,7 +850,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 
-[Unreleased]:   https://github.com/absolunet/eslint-config/compare/5.2.6...HEAD
+[Unreleased]:   https://github.com/absolunet/eslint-config/compare/5.2.7...HEAD
+[5.2.7]:   https://github.com/absolunet/eslint-config/compare/5.2.6...5.2.7
 [5.2.6]:   https://github.com/absolunet/eslint-config/compare/5.2.5...5.2.6
 [5.2.5]:   https://github.com/absolunet/eslint-config/compare/5.2.4...5.2.5
 [5.2.4]:   https://github.com/absolunet/eslint-config/compare/5.2.3...5.2.4
