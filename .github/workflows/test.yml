@@ -12,10 +12,10 @@ jobs:
     uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/setup.yml@main
     with:
       branch-ref: ${{ github.head_ref }}
-#      jfrog-artifactory: true
+      jfrog-artifactory: true
     secrets:
-#      scope: ${{ secrets.JFROG_ARTIFACTORY_NPM_SPARKS_SCOPE }}
-#      registry-url: ${{ secrets.JFROG_ARTIFACTORY_NPM_SPARKS_REGISTRY }}
+      scope: ${{ secrets.JFROG_ARTIFACTORY_NPM_SPARKS_SCOPE }}
+      registry-url: ${{ secrets.JFROG_ARTIFACTORY_NPM_SPARKS_REGISTRY }}
       auth-token: ${{ secrets.JFROG_ARTIFACTORY_NPM_SPARKS_AUTH }}
   call_workflow_build:
     name: Build project
