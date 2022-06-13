@@ -25,4 +25,5 @@ jobs:
     name: Publish packages
     needs: [ call_workflow_build ]
     uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/publish.yml@develop
-    auth-token: ${{ secrets.JFROG_ARTIFACTORY_NPM_SPARKS_AUTH }}
+    secrets:
+      auth-token: ${{ secrets.JFROG_ARTIFACTORY_NPM_SPARKS_AUTH }}
