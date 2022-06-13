@@ -8,7 +8,7 @@ on:
 jobs:
   call_workflow_setup:
     name: Setup environment
-    uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/setup.yml@develop
+    uses: absolunet/github-node-reusable-workflows/.github/workflows/setup.yml@develop
     with:
       branch-ref: ${{ github.head_ref }}
       jfrog-artifactory: true
@@ -20,10 +20,10 @@ jobs:
   call_workflow_build:
     name: Build project
     needs: [ call_workflow_setup ]
-    uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/build.yml@develop
+    uses: absolunet/github-node-reusable-workflows/.github/workflows/build.yml@develop
   call_workflow_publish:
     name: Publish packages
     needs: [ call_workflow_build ]
-    uses: absolunet/github-node-manager-reusable-workflows/.github/workflows/publish.yml@develop
+    uses: absolunet/github-node-reusable-workflows/.github/workflows/publish.yml@develop
     secrets:
       auth-token: ${{ secrets.JFROG_ARTIFACTORY_NPM_SPARKS_AUTH }}
